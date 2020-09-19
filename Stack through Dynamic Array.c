@@ -25,12 +25,12 @@ int isfull(struct arraystack *stack)
     if(stack->top == stack->capacity-1)
     {
         printf("Stack is full\n");
-        return 0;
+        return 1;
     }
     else
     {
         printf("Stack is not full\n");
-        return 1;
+        return 0;
     }
 }
 
@@ -40,12 +40,12 @@ int isempty(struct arraystack *stack)
     if(stack->top == -1)
     {
         printf("Stack is empty\n");
-        return 0;
+        return 1;
     }
     else
     {
         printf("Stack is not empty\n");
-        return 1;
+        return 0;
     }
 }
 
@@ -53,6 +53,8 @@ int isempty(struct arraystack *stack)
 void push(struct arraystack *stack)
 {
     if(isfull(stack))
+        printf("\n");
+    else
     {
         int data;
         printf("Enter the data to be pushed in the stack\n");
@@ -60,22 +62,20 @@ void push(struct arraystack *stack)
         stack->top++;
         stack->ptr[stack->top]=data;
     }
-    else
-        printf("\nStack is full\n");
 }
 
 
 void pop(struct arraystack *stack)
 {
     if(isempty(stack))
+        printf("\n");
+    else
     {
         int item;
         item=stack->ptr[stack->top];
         stack->top--;
         printf("Popped out %d from stack\n",item);
     }
-    else
-        printf("\nStack is empty\n");
 }
 
 
