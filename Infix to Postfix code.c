@@ -15,7 +15,7 @@ struct arraystack* createstack()
     stackblock=malloc(sizeof(struct arraystack));
     stackblock->capacity=50;
     stackblock->top=-1;
-    stackblock->ptr=malloc(sizeof(int)*stackblock->capacity);
+    stackblock->ptr=malloc(sizeof(char)*stackblock->capacity);
     return(stackblock);
 };
 
