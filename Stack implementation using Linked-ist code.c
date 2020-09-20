@@ -8,7 +8,7 @@ struct node
     int info;
     struct node *link;
 };
-struct node *start=NULL;                                                //star pointer to point linked list.In starting NULL is assigned
+struct node *start=NULL;                                                
 
 struct node* createnode()
 {
